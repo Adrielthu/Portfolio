@@ -187,11 +187,35 @@
 
 @media (max-width: 768px) {
   .bar {
-    padding: 0.5rem 0 0 0;
+    padding: 1rem 0 0 0;
   }
   .bar a {
-    font-size: 1rem;
+    font-size: 1.6rem;
     padding: 0 0.6rem;
+  }
+  .wrapper {
+    min-height: 82vh;
+  }
+  .wrapper .home .logo {
+    padding-bottom: 2rem;
+    width: 15rem;
+  }
+  .wrapper .home .name h1 {
+    font-size: 2.5rem;
+  }
+  .wrapper .home .name p {
+    font-size: 1.6rem;
+    padding-top: 0.5rem;
+  }
+  .wrapper .home .menu {
+    padding: 1rem 0 0 0;
+  }
+  .wrapper .home .menu a {
+    font-size: 1.1rem;
+  }
+  .wrapper .home .btn-contact {
+    padding-top: 1.2rem;
+    font-size: 2rem;
   }
   .about-me {
     flex-direction: column;
@@ -203,17 +227,20 @@
     width: 14rem;
   }
   .about-me .me {
+    padding: 1.5rem;
     font-size: 1.5rem;
   }
   .about-me .me h2 {
-    font-size: 1rem;
+    font-size: 2rem;
   }
   .skills h2 {
     font-size: 3rem;
   }
   .skills .centrador-skills {
     width: 100%;
-    justify-content: space-between;
+  }
+  .projects {
+    align-content: center;
   }
 }
 @media (min-width: 1200px) {
