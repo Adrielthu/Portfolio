@@ -4,50 +4,130 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Proyecto</title>
-  <link rel="stylesheet" href="css/proyecto.css" />
+  <script>
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+  </script>
+  		<!-- Link -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="assets/favicon/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="/assets/favicon/favicon-16x16.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="assets/favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="192x192"
+			href="assets/favicon/android-chrome-192x192.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="512x512"
+			href="assets/favicon/android-chrome-512x512.png"
+		/>
+		<link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico" />
+		<link rel="manifest" href="assets/favicon/site.webmanifest" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+			integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+			crossorigin="anonymous"
+		/>
+  <link rel="stylesheet" href="css/projects.css" />
 </head>
 <body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <!-- Logo -->
+      <h1 id="logo">
+        <a href="index.html"
+          ><img src="./assets/logo.png" alt="Logo A"/></a
+        /></a>
+      </h1>
+      <!-- Navbar links -->
+      <ul class="nav-menu">
+      </ul>
+    </div>
+  </nav>
+  <div class="breadcrumb">
+    <a href="index.html#projects">← Volver a proyectos</a>
+  </div>
+
   <div class="proyecto">
-    <h1 id="titulo"></h1>
-    <h3 id="subtitulo"></h3>
+    <!-- 1. Título -->
+    <header class="encabezado-proyecto">
+      <h1 id="titulo"></h1>
+    </header>
 
-    <section>
-      <h2>📌 Introducción</h2>
-      <p id="introduccion"></p>
-    </section>
-
-    <section>
-      <h2>🛠️ Tecnologías utilizadas</h2>
-      <ul id="tecnologias"></ul>
-    </section>
-
-    <section>
-      <h2>🔁 Pipeline del Proyecto</h2>
-      <ol id="pipeline"></ol>
-    </section>
-
-    <section>
-      <h2>📊 Visualizaciones</h2>
+    <!-- 2. Visualización destacada -->
+    <section id="visual" class="visualizaciones">
       <div id="visualizaciones"></div>
     </section>
 
-    <section>
-      <h2>📈 Resultados</h2>
-      <ul id="resultados"></ul>
+    <!-- 3. Storytelling narrativo -->
+    <section class="historia">
+      <h2>Contexto</h2>
+      <p id="contexto"></p>
+
+      <h2>El desafío</h2>
+      <p id="desafio"></p>
+
+      <h2>Mi aporte</h2>
+      <p id="aporte"></p>
+
+      <h2>Resultado</h2>
+      <p id="resultado"></p>
+
+      <h2>Aprendizaje</h2>
+      <p id="aprendizaje"></p>
     </section>
 
-    <section>
-      <h2>👨‍💻 Repositorio</h2>
-      <a id="github" target="_blank">📁 Ver en GitHub</a>
+    <!-- 4. Tecnologías -->
+    <section class="badges">
+      <h2 class="subtitulo">Tecnologías utilizadas</h2>
+      <ul id="tecnologias" class="chips-tecnologias"></ul>
     </section>
 
-    <section>
-      <h2>🤝 Créditos</h2>
-      <p id="autor"></p>
+    <!-- 5. Link al proyecto -->
+    <section class="links">
+      <a id="github" href="#" target="_blank" class="btn">Ver en GitHub</a>
     </section>
   </div>
 
-  <script src="js/proyectos.js"></script>
-  <script src="js/render.js"></script>
+
+
+
+  <footer id="footer">
+    <div class="container">
+      <div class="social">
+        <a href="https://www.linkedin.com/in/adriel-starchevich/" target="_blank">
+          <img src="./assets/linkedin-icon.svg" alt="Linkedin" />
+        </a>
+        <a href="https://github.com/Adrielthu" target="_blank">
+          <img src="./assets/github-icon.svg" alt="GitHub" />
+        </a>
+      </div>
+      <p>
+        © <span id="datee"></span> Adriel Starchevich
+      </p>
+    </div>
+  </footer>
+  <script type="module" src="js/main-proyectos.js"></script>
 </body>
 </html>
