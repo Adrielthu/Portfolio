@@ -43,6 +43,9 @@ h2::selection {
   background: var(--secondary-color);
 }
 
+
+/* ELIMINAR */
+
 /* Dark mode toggle */
 #switch {
   display: none;
@@ -71,6 +74,9 @@ h2::selection {
 #switch:checked + .toggle-icons .sun {
   transform: rotate(100deg);
 }
+
+/* ELIMINAR */
+
 
 /* Header Container */
 .header-container {

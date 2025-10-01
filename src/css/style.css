@@ -75,7 +75,7 @@ body {
   transition: background-color 0.5s ease, color 0.5s ease; /* Transición para el tema */
 }
 
-
+/* ELIMINAR */
 /* Navbar */
 .navbar {
   position: fixed;
@@ -142,6 +142,8 @@ body {
   background-color: var(--bg-secondary);
 }
 
+/* ELIMINAR */
+
 /* Hero section */
 #hero {
   display: flex;
@@ -165,12 +167,15 @@ body {
   }
 }
 
+/* BARRA RARA */
 .division {
   width: 100%;
   height: 2px;
   background-color: var(--card-background);
   margin: 5.5rem 0;
 }
+/* BARRA RARA */
+
 /* Projects */
 #projects {
   display: flex;
@@ -218,6 +223,9 @@ body {
   left: 10px;
 }
 
+
+
+/* ELIMINAR */
 /* Footer */
 #footer {
   background: #111111;
@@ -258,6 +266,10 @@ body {
 #footer p {
   font-size: 0.8rem;
 }
+/* ELIMINAR */
+
+
+
 
 /* Responsiveness */
 
