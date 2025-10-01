@@ -34,7 +34,6 @@ function switchTheme(e) {
 toggleSwitch.addEventListener("change", switchTheme, false);
 
 //  Store color theme for future visits
-
 function switchTheme(e) {
   if (e.target.checked) {
     document.documentElement.setAttribute("data-theme", "dark");
@@ -46,7 +45,6 @@ function switchTheme(e) {
 }
 
 // Save user preference on load
-
 const currentTheme = localStorage.getItem("theme")
   ? localStorage.getItem("theme")
   : null;
@@ -60,7 +58,6 @@ if (currentTheme) {
 }
 
 //Adding date
-
 let myDate = document.querySelector("#datee");
 
 const yes = new Date().getFullYear();

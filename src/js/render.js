@@ -1,47 +1,86 @@
-// Obtener nombre del proyecto desde la URL
-const params = new URLSearchParams(window.location.search);
-const proyectoId = params.get("id");
+// render.js
+export function renderProyecto() {
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
 
-const proyecto = proyectos[proyectoId];
+  fetch("js/proyectos.json")
+    .then(response => response.json())
+    .then(data => {
+      const proyecto = data[id];
 
-if (proyecto) {
-  document.getElementById("titulo").textContent = proyecto.titulo;
-  document.getElementById("subtitulo").textContent = proyecto.subtitulo;
-  document.getElementById("introduccion").textContent = proyecto.introduccion;
+      if (!proyecto) {
+        document.body.innerHTML = "<h1>❌ Proyecto no encontrado</h1>";
+        return;
+      }
 
-  // Tecnologías
-  const ulTec = document.getElementById("tecnologias");
-  proyecto.tecnologias.forEach(tec => {
-    const li = document.createElement("li");
-    li.textContent = tec;
-    ulTec.appendChild(li);
-  });
+      document.title = proyecto.titulo;
+      document.getElementById("titulo").textContent = proyecto.titulo;
+      document.getElementById("contexto").textContent = proyecto.contexto;
 
-  // Pipeline
-  const olPipe = document.getElementById("pipeline");
-  proyecto.pipeline.forEach(paso => {
-    const li = document.createElement("li");
-    li.textContent = paso;
-    olPipe.appendChild(li);
-  });
+      // 2. Texto narrativo
+      document.getElementById("desafio").textContent = proyecto.desafio;
+      document.getElementById("aporte").textContent = proyecto.aporte;
+      document.getElementById("resultado").textContent = proyecto.resultado;
+      document.getElementById("aprendizaje").textContent = proyecto.aprendizaje;
 
-  // Visualizaciones
-  const contVis = document.getElementById("visualizaciones");
-  proyecto.visualizaciones.forEach(src => {
-    const img = document.createElement("img");
-    img.src = src;
-    img.width = "100%";
-    contVis.appendChild(img);
-  });
+      // Tecnologías
+      const ulTec = document.getElementById("tecnologias");
+      proyecto.tecnologias.forEach(tec => {
+        const span = document.createElement("span");
+        span.textContent = tec;
+        ulTec.appendChild(span);
+      });
 
-  // Resultados
-  const ulRes = document.getElementById("resultados");
-  proyecto.resultados.forEach(r => {
-    const li = document.createElement("li");
-    li.textContent = r;
-    ulRes.appendChild(li);
-  });
+      // Visualizaciones - solo selección de miniaturas
+      const divVis = document.getElementById("visualizaciones");
 
-  document.getElementById("github").href = proyecto.github;
-  document.getElementById("autor").textContent = proyecto.autor;
+      // Función para cambiar imagen destacada
+      const setFeaturedImage = (src, activeThumb) => {
+        const featuredImg = divVis.querySelector(".featured img");
+        featuredImg.src = src;
+
+        // Actualizar miniatura activa
+        divVis.querySelectorAll(".thumbnails img").forEach(img =>
+          img.classList.toggle("active", img === activeThumb)
+        );
+      };
+
+      // Renderizar visualizaciones
+      divVis.innerHTML = `
+        <div class="featured">
+          <img src="${proyecto.visualizaciones[0]}"
+              alt="Imagen destacada del proyecto">
+        </div>
+        ${proyecto.visualizaciones.length > 0 ? `
+          <div class="thumbnails">
+            ${proyecto.visualizaciones.map((src, index) =>
+              `<img src="${src}"
+                    alt="Miniatura del proyecto"
+                    class="${index === 0 ? 'active' : ''}">`
+            ).join('')}
+          </div>
+        ` : ''}
+      `;
+
+      // Event listener solo para cambiar imagen destacada
+      divVis.addEventListener("click", (e) => {
+        if (e.target.matches(".thumbnails img")) {
+          setFeaturedImage(e.target.src, e.target);
+        }
+      });
+
+      // GitHub link
+      const enlaceGit = document.getElementById("github");
+      if (proyecto.github) {
+        enlaceGit.href = proyecto.github;
+        enlaceGit.style.display = "inline-block";
+      } else {
+        enlaceGit.style.display = "none";
+      }
+
+    })
+    .catch(error => {
+      console.error("Error al cargar el proyecto:", error);
+      document.body.innerHTML = "<h1>Error al cargar el proyecto</h1>";
+    });
 }
