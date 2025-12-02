@@ -96,12 +96,16 @@
             <section >
                 <!-- <img class="profile-image" src="src/assets/profile-image.png" alt="" /> -->
                 <div class="main-text">
-                    <h1>¡Hola! Soy
-                        <span class="text-highlight">Adriel Starchevich
+                    <h3 class="text-highlight">
+                        <span>
+                                Adriel Starchevich
                         </span>
-                    </h1>
-                    <h2><strong>Ingeniero de Datos & Data Scientist</strong></h2>
-
+                    </h3>
+                    <h1>Data Engineer & Data Scientist</h1>
+                    <h2>
+                        Me encargo de todo el ciclo de vida del dato: desde la extracción, el diseño e implementación del Data Warehouse, hasta
+                        la visualización y la Minería de Datos.
+                    </h2>
                 </div>
             </section>
         <!-- SOBRE MÍ -->
@@ -110,7 +114,7 @@
                 <h1 id="toggle-sobre-mi">Sobre mí</h1>
                 <h2>
                     Soy Técnico Universitario en Procesamiento y Explotación de Datos.
-                    Tengo una muy buena base tanto en Ingeniería de Datos (ETL, SQL, Pentaho, Data Warehouse) como en Ciencia de Datos (R, Python, Minería de Datos).
+                    Combino Ingeniería de Datos (ETL, SQL, Pentaho, Data Warehouse) con Ciencia de Datos (R, Python, EDA avanzado, Machine Learning, Minería de Datos).
                 </h2>
                 <h2>
                     Recientemente, optimicé la infraestructura de datos de ETSOL, una empresa ERP, resolviendo problemas en su ETL y
@@ -138,7 +142,7 @@
             <!--<div class="division division--static-pulse"></div> -->
 
             <div class="proyectos-header">
-                <h1>Proyectos y Experiencias</h1>
+                <h1>Proyectos Destacados</h1>
             </div>
 
             <article class="project">
@@ -149,14 +153,15 @@
                 >
                     <div class="project-info">
                         <div class="project-bio">
-                            <h3>Análisis Geoespacial</h3>
-                            <p>Python, QGIS</p>
+                            <h3>Integración de datos Geográficas</h3>
+                            <p>Python • APIs • QGIS</p>
                         </div>
 
                         <div class="project-link">
                             <a
                                 href="https://github.com/Adrielthu/Capa_GIS_Salta"
                                 target="_blank"
+                                onclick="event.stopPropagation()"
                                 ><i class="fab fa-github"></i
                             ></a>
                         </div>
@@ -169,8 +174,8 @@
                     onclick="window.location.href='src/proyecto.html?id=dashboard-logs'">
                     <div class="project-info">
                         <div class="project-bio">
-                            <h3>Implementación de Data Warehouse</h3>
-                            <p>Python, PostgreSQL, Docker, Grafana</p>
+                            <h3>Data Warehouse & Monitoreo Web</h3>
+                            <p>Docker • Postgres • ELT Automatizado</p>
                         </div>
 
                         <div class="project-link">
@@ -186,22 +191,38 @@
 
                 <!-- Porject 3 -->
                 <div
-                    href=""
                     class="card project-3"
                     onclick="window.location.href='src/proyecto.html?id=reglas-de-asociacion'"
                 >
                     <div class="project-info">
                         <div class="project-bio">
-                            <h3>Reglas de Asociación</h3>
-                            <p>rStudio</p>
+                            <h3>Minería de Datos & Recomendación</h3>
+                            <p>R • Machine Learning • Analytics</p>
                         </div>
 
                         <div class="project-link">
-                            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                            <a href="https://github.com/Adrielthu/Association_Rule" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
                         </div>
                     </div>
                 </div>
 
+
+                <!-- Porject 4 -->
+                <div
+                    class="card project-4"
+                    onclick="window.location.href='src/proyecto.html?id=costo-vida-argentina'"
+                >
+                    <div class="project-info">
+                        <div class="project-bio">
+                            <h3>Costo de vida en Argentina</h3>
+                            <p>Python • Metabase • Docker • PostgreSQL • Linux • Cloudflare</p>
+                        </div>
+
+                        <div class="project-link">
+                            <a href="#" target="_blank" onclick="event.stopPropagation()"><i class="fab fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
             </article>
         </section>
         <footer id="footer">

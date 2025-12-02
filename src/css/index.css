@@ -640,30 +640,42 @@ h2::selection {
   margin-bottom: 2rem;
   letter-spacing: 2px;
   font-weight: 600;
-  /* Efecto texto amarillo neón */
-  color: rgb(254, 205, 66);
-  text-shadow: 0 0 8px rgba(254, 205, 66, 0.6), 0 0 16px rgba(254, 205, 66, 0.3);
-  /* Subrayado animado */
+  /*
+  /* Efecto texto amarillo neón
+  color: rgb(254, 205, 66); // Amarillo vibrante
+  text-shadow:
+    0 0 8px rgba(254, 205, 66, 0.6),
+    0 0 16px rgba(254, 205, 66, 0.3);
+
   position: relative;
   display: inline-block;
   padding-bottom: 12px;
-  /* Efecto de parpadeo sutil */
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgb(254, 205, 66),
+      transparent
+    );
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  /* Efecto de parpadeo sutil
   animation: subtleGlow 3s infinite alternate;
-}
-.main-text h2::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, rgb(254, 205, 66), transparent);
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.4s ease;
-}
-.main-text h2:hover::after {
-  transform: scaleX(1);
+  */
 }
 
 @keyframes subtleGlow {
@@ -960,6 +972,10 @@ h2::selection {
 
 .card:nth-child(3)::before {
   background-image: url(../assets/project/project-three.png);
+}
+
+.card:nth-child(4) {
+  background: url(../assets/project/project-four.png) center center/cover;
 }
 
 /* Responsiveness */
