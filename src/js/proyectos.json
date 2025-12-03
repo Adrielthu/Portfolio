@@ -1,37 +1,11 @@
 {
-  "dashboard-logs": {
-    "titulo": "Dashboard de Análisis de Logs Web",
-    "contexto": "Este proyecto fue desarrollado como parte de una asignatura de la carrera de Ciencia de Datos en equipo. La idea principal fue crear un dashboard interactivo para visualizar los registros (logs) de un servidor web, implementando un proceso ETL para transformar los datos y poder visualizarlos.",
-    "desafio": "Transformar logs de un servidor web en información clara y accesible mediante un dashboard interactivo.",
-    "aporte": "Participé en el diseño e implementación de un Data Warehouse en PostgreSQL, desarrollé un proceso ETL en Python optimizado con logging para monitoreo, y monté toda la infraestructura en un servidor Debian 12 propio (al cual accedía de forma remota con Tailscale VPN), utilizando Docker compose, Jupyter Notebook, pgweb, PostgreSQL y Grafana. Para que mi equipo acceda remotamente utilicé Cloudflared Tunnel.",
-    "resultado": "Obtuvimos un dashboard en Grafana conectado a la base de datos, que permite visualizar métricas importantes del servidor con distintos gráficos interactivos.",
-    "aprendizaje": "Profundicé en el proceso de ETL al implementar técnicas de chunks y logging, en la administración de entornos productivos con contenedores y en el desarrollo en equipo.",
-    "tecnologias": [
-      "Python",
-      "PostgreSQL",
-      "Docker",
-      "Grafana",
-      "Jupyter Notebook",
-      "pgweb",
-      "Linux",
-      "Tailscale",
-      "Cloudflared"
-    ],
-    "visualizaciones": [
-      "assets/proyectos/dash-2.png",
-      "assets/proyectos/dash-3.png",
-      "assets/proyectos/diagrama_kimball.png",
-      "assets/proyectos/arquitectura-docker.png"
-    ],
-    "github": "https://github.com/Adrielthu/Analisis_de_logs"
-  },
   "gis-salta": {
-    "titulo": "Análisis Geoespacial de Salta Capital",
+    "titulo": "Integración de datos Geográficas",
     "contexto": "Este proyecto lo hice como parte de una práctica académica relacionada a Fundación Sadosky para estudiar la propagación de la tuberculosis en Salta Capital, el cual es un problema de sanidad a nivel nacional porque cuenta con altas tasas de incidencia.",
-    "desafio": "En principio se me presentaron varios desafíos, el principal fue aprender a manejar las herramientas para datos geoespaciales y QGIS, y el otro fue adaptar un script que ya existía (pero diseñado para otra provincia) a Salta Capital, esto me obligó a estudiar en profundidad qué hacía el script y cómo poder aplicar las mejores prácticas para no solo cumplir con el objetivo, sino también mejorar la calidad del resultado.",
-    "aporte": "Ademas de adaptar el script para que funcione en Salta, implementé librerías específicas para manejar datos geoespaciales ya que antes no se utilizaban, y eran necesarias para simplificar el proceso, sumé datos reales que antes se generaban con el script, lo cual ayudó a mejorar la precisión de los análisis posteriores, y por último, desarrollé un modelo de machine learning para dar solución rápida y automática a un problema en la obtención manual de datos.",
-    "resultado": "Generé dos capas GIS: una con las viviendas (datos reales integrados) e indicadores socioeconómicos, y otra con puntos de interés urbanos (restaurantes, gimnasios, hospitales, etc). Este resultado fue muy importante ya que permitió dar mayor realismo a la simulación de cómo se propagaría la tuberculosis en ciertos escenarios o en un futuro.",
-    "aprendizaje": "Aprendí a manejar datos geoespaciales y a utilizar herramientas como QGIS y GeoPandas, además mejoré mis habilidades de comunicación al tener que explicar conceptos técnicos a personas sin conocimientos en el área.",
+    "desafio": "En principio se me presentaron varios desafíos, el principal fue el desconocimiento inicial de las herramientas para datos geoespaciales y QGIS, y el otro fue adaptar un script que ya existía (pero diseñado para otra provincia) a Salta Capital, esto me obligó a estudiar en profundidad el script y cómo poder aplicar las mejores prácticas para no solo cumplir con el objetivo, sino también mejorar la calidad del resultado.",
+    "aporte": "Ademas de adaptar el script para que funcione en Salta, implementé librerías específicas para manejar datos geoespaciales ya que esto simplificaba el proceso, implementé datos reales (antes se generaban aleatoriamente con un script), lo cual ayudó a mejorar la precisión de los análisis posteriores, y por último, desarrollé un modelo de Machine Learning para dar solución rápida y automática a un problema con la API.",
+    "resultado": "Entregué dos mapas digitales (capas GIS) detallados que ahora usan los investigadores para simular cómo se propagaría la tuberculosis en ciertos escenarios o en un futuro.",
+    "aprendizaje": "Aprendí a usar QGIS desde cero y a manejar APIs para obtener datos externos. También mejoré mis habilidades en el desarrollo de modelos de Machine Learning aplicados a problemas del mundo real.",
     "tecnologias": [
       "Python",
       "QGIS",
@@ -46,19 +20,43 @@
     ],
     "github": "https://github.com/Adrielthu/Capa_GIS_Salta"
   },
+  "dashboard-logs": {
+    "titulo": "Data Warehouse & Monitoreo Web",
+    "contexto": "Este proyecto fue desarrollado en la carrera de Ciencia de Datos y en equipo. El objetivo fue visualizar lo que estaba pasando en nuestro servidor web sin tener que leer archivos de texto línea por línea.",
+    "desafio": "El reto fue procesar archivos muy pesados sin saturar la memoria RAM, y hacer que esa información sea accesible para mi equipo de forma remota y segura.",
+    "aporte": "Participé en el diseño e implementación de un Data Warehouse en PostgreSQL, desarrollé un script en Python que lee los logs, los limpia y los guarda en una base de datos PostgreSQL. Para no saturar la memoria, implementé lectura por bloques (chunks). Monté toda la infraestructura (Base de datos + Grafana) en un servidor Linux propio y configuré una VPN para acceder desde cualquier lado. Para que mi equipo acceda remotamente a Jupyter Notebook utilicé Cloudflared Tunnel.",
+    "resultado": "Se pasó textos incomprensibles a tener un dashboard en Grafana con gráficos en tiempo real sobre errores, visitas y rendimiento del servidor.",
+    "aprendizaje": "Profundicé en el proceso de ETL al implementar técnicas de chunks y logging, en la administración de entornos con contenedores y en el desarrollo en equipo.",
+    "tecnologias": [
+      "Python",
+      "PostgreSQL",
+      "Docker",
+      "Grafana",
+      "Jupyter Notebook",
+      "Linux",
+      "Tailscale",
+      "Cloudflared"
+    ],
+    "visualizaciones": [
+      "assets/proyectos/dash-2.png",
+      "assets/proyectos/dash-3.png",
+      "assets/proyectos/diagrama_kimball.png",
+      "assets/proyectos/arquitectura-docker.png"
+    ],
+    "github": "https://github.com/Adrielthu/Analisis_de_logs"
+  },
   "reglas-de-asociacion": {
-    "titulo": "Análisis de comportamiento de clientes en una E-Shop Polaca",
+    "titulo": "Minería de Datos & Recomendación",
     "contexto": "Realicé un análisis de patrones para entender cómo se comporta y navega el usuario en una e-shop polaca. El objetivo fue encontrar recomendaciones basadas en reglas de asociación y secuencias de navegación utilizando Minería de Datos, para optimizar la estrategia comercial y la experiencia del cliente.",
-    "desafio": "Lo más desafiante fue implementar un algoritmo de Minería que de un buen resultado, en este caso fue a prueba y error, probando distintos parámetros hasta encontrar la combinación que de mejor resultado.",
+    "desafio": "Encontrar la configuración justa del algoritmo, al principio me daba reglas obvias o ninguna regla, fue un proceso de prueba y error ajustar los parámetros para encontrar patrones útiles.",
     "aporte": "No solo identifiqué productos importantes y patrones de navegación, lo cual permitiría implementar un sistema de recomendaciones personalizadas para los usuarios, similar a como lo hace Mercado Libre, sinó que también propuse mejoras en cuanto a la reubicación de los productos, ya que me di cuenta de que no se podrían colocar en posiciones estratégicas para que más usuarios hicieran click, esto lo podemos ver en el gráfico del principio.",
-    "resultado": "Como resultado obtuve una lista de los productos más importantes, reglas de asociación entre productos y patrones de navegación comunes. Pueden ser utilizados para mejorar la experiencia del usuario y optimizar la estrategia comercial de la e-shop.",
-    "aprendizaje": "Aprendí a aplicar técnicas de minería de datos para obtener información que no se puede ver a simple vista.",
+    "resultado": "Generé una lista de recomendaciones concretas para reorganizar el catálogo y sugerir productos cruzados, similar a lo que hace Mercado Libre.",
+    "aprendizaje": "Aprendí que la minería de datos requiere mucho ajuste manual y conocimiento del negocio para que los resultados sirvan.",
     "tecnologias": [
       "R",
-      "Rstudio",
-      "arules",
+      "Arules",
       "Spade",
-      "git"
+      "Git"
     ],
     "visualizaciones": [
       "assets/proyectos/reglas-asociacion.png",
@@ -69,9 +67,9 @@
     "github": "https://github.com/Adrielthu/Association_Rule"
   },
   "educacion-federacion": {
-    "titulo": "Diagnóstico Educativo en Federación, Entre Ríos",
+    "titulo": "Diagnóstico Educativo con R",
     "contexto": "",
-    "desafio": "El principal desafío fue trabajar con una base de datos real que presentaba varios problemas, como datos faltantes, inconsistencias y falta de normalización. Además, tuve que seleccionar las variables más relevantes para el análisis y decidir qué métodos estadísticos utilizar para obtener conclusiones significativas.",
+    "desafio": "Me encontré con un archivo lleno de errores, formatos distintos y campos vacíos. El desafío fue limpiar todo eso sin perder información valiosa.",
     "aporte": "Realicé un análisis exhaustivo de los datos, aplicando técnicas de limpieza y transformación para abordar los problemas identificados. Utilicé métodos estadísticos para obtener conclusiones significativas y visualicé los resultados de manera efectiva.",
     "resultado": "El análisis permitió identificar fortalezas y debilidades en el sistema educativo de Federación, Entre Ríos. Se detectaron disparidades entre escuelas públicas y privadas, diferencias en el rendimiento",
     "aprendizaje": "Aprendí a manejar y limpiar datos reales, aplicar técnicas estadísticas y de visualización para comunicar resultados de manera efectiva. También mejoré mis habilidades en R y en el uso de librerías como ggplot2 y plotly para crear gráficos interactivos.",
@@ -86,6 +84,27 @@
       "assets/proyectos/Educacion_1.png",
       "assets/proyectos/Educacion_2.png",
       "assets/proyectos/Educacion_3.png"
+    ]
+  },
+  "costo-vida-argentina": {
+    "titulo": "Dashboard de Costo de Vida",
+    "contexto": "Lo hice para un concurso nacional 'Contar con Datos' de la Universidad de San Andrés. Participé en la categoría de 'Exploración Interactiva' con el objetivo de transformar datos en una herramienta para tomar decisiones.",
+    "desafio": "El reto más grande fue la falta de datos de gastos (eran del 2018). Para solucionar esto, proyecté los gastos históricos utilizando el índice de inflación (IPC).",
+    "aporte": "Desarrollé todo ciclo de vida de datos: desde el proceso ETL en Python hasta la infraestructura. Para almacenar los datos, implementé un Data Warehouse con esquema 'Copo de Nieve' (Snowflake) en PostgreSQL y para la visualización usé Metabase por varias razones, es open source y permite implementar mapas interactivos de una forma muy simple.",
+    "resultado": "Logré que se pueda acceder a este dashboard desde cualquier parte del mundo y que sea escalable, ya que para actualizar el dashboard basta con ejecutar el proceso ETL nuevamente.",
+    "aprendizaje": "Aprendí a desplegar aplicaciones expuestas a internet utilizando Cloudflare.",
+    "tecnologias": [
+      "Python",
+      "Docker",
+      "PostgreSQL",
+      "Metabase",
+      "Cloudflare"
+    ],
+    "visualizaciones": [
+      "assets/proyectos/dash_principal_4.png",
+      "assets/proyectos/dash_princ_2_4.png",
+      "assets/proyectos/dash_provin_4.png",
+      "assets/proyectos/diagrama_4.png"
     ]
   }
 }
